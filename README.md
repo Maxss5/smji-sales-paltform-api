@@ -38,7 +38,7 @@ $ npm install
 $ npm run dev:api
 
 # Front admin (NextJs)
-$ npm run dev_admin
+$ npm run dev:admin
 
 # both at the same time
 $ npm run dev
