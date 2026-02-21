@@ -31,6 +31,21 @@
 $ npm install
 ```
 
+## Compile and run with concurrently
+
+```bash
+# api (nestJS + Prisma)
+$ npm run dev:api
+
+# Front admin (NextJs)
+$ npm run dev_admin
+
+# both at the same time
+$ npm run dev
+```
+
+
+
 ## Compile and run the project
 
 ```bash
