@@ -1,12 +1,9 @@
 {
-  "name": "smji-sales-platform-api",
+  "name": "api",
   "version": "0.0.1",
   "description": "",
   "author": "",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
@@ -22,9 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "dev:api": "npm run dev --prefix apps/api",
-    "dev:admin": "npm run dev --prefix apps/admin",
-    "dev": "concurrently \"npm run dev:api\" \"npm run dev:admin\""
+    "dev": "nest start --watch"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -47,7 +42,6 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^22.10.7",
     "@types/supertest": "^6.0.2",
-    "concurrently": "^9.2.1",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
