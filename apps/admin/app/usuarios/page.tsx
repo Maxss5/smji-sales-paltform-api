@@ -15,19 +15,18 @@ export default function UserPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Usuarios</h1>
-
-      <table className="w-full bg-white shadow">
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>email</th>
+      <table className="w-full bg-white shadow rounded-lg overflow-hidden">
+        <thead className="bg-gray-200">
+          <tr className="text-left">
+            <th className="p-3">Nombre</th>
+            <th className="p-3">Email</th>
           </tr>
         </thead>
         <tbody>
-          {usuarios.map((p: any) => (
-            <tr key={p.id}>
-              <td>{p.name}</td>
-              <td>{p.email}</td>
+          {usuarios.map((u: any) => (
+            <tr key={u.id} className="border-b hover:bg-gray-50">
+              <td className="p-3">{u.name}</td>
+              <td className="p-3">{u.email}</td>
             </tr>
           ))}
         </tbody>

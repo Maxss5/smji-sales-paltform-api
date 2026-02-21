@@ -39,6 +39,11 @@ export class AppController {
     return this.UserService.users({});
   }
 
+  @Get('products')
+  async getProducts(): Promise<ProductModel[]> {
+    return this.productService.products({});
+  }
+
   @Get('filtered-products/:searchString')
   async getFilteredProducts(
     @Param('searchString') searchString: string,
