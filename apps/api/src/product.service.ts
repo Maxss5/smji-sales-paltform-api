@@ -31,6 +31,12 @@ export class ProductService {
     });
   }
 
+  async findAllSimple() {
+    return this.prisma.product.findMany({
+      select: { id: true, name: true },
+    });
+  }
+
   async createProduct(data: any) {
     return this.prisma.product.create({
       data: {

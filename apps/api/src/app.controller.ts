@@ -49,6 +49,11 @@ export class AppController {
     return this.productService.create(data);
   }
 
+  @Get('products/list-simple')
+  async findAllSimple() {
+    return this.productService.findAllSimple();
+  }
+
   @Get('filtered-products/:searchString')
   async getFilteredProducts(
     @Param('searchString') searchString: string,
