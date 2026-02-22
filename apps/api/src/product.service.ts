@@ -28,6 +28,7 @@ export class ProductService {
       cursor,
       where,
       orderBy,
+      include: { ProductVariant: true },
     });
   }
 
