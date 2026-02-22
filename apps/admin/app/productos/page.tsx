@@ -14,6 +14,7 @@ export default function ProductosPage() {
     productId: "",
     name: "",
     description: "",
+    category: "",
     companyId: "96baea1f-e485-413e-a4f4-5a5f0e97660a", 
     variants: [{ sku: "", size: "", color: "", salePrice: 0 }]
   };
@@ -128,6 +129,12 @@ export default function ProductosPage() {
                   value={formData.description}
                   onChange={e => setFormData({...formData, description: e.target.value})}
                 />
+                <input 
+                  type="text" placeholder="Categoría"
+                  className="border p-2 rounded"
+                  value={formData.category}
+                  onChange={e => setFormData({...formData, category: e.target.value})}
+                />
               </div>
             )}
           </div>
@@ -160,7 +167,7 @@ export default function ProductosPage() {
             <tr className="text-left text-gray-600 uppercase text-xs font-bold">
               <th className="p-4">Nombre</th>
               <th className="p-4">Descripción</th>
-              <th className="p-4 text-center">Variantes</th>
+              <th className="p-4 text-center">Categoría</th>
               <th className="p-4">Acciones</th>
             </tr>
           </thead>
@@ -169,6 +176,7 @@ export default function ProductosPage() {
               <tr key={p.id} className="border-b hover:bg-blue-50 transition">
                 <td className="p-4 font-semibold text-gray-800">{p.name}</td>
                 <td className="p-4 text-gray-500 italic">{p.description || "Sin descripción"}</td>
+                <td className="p-4 text-gray-500 italic">{p.category || "Sin categoria"}</td>
                 <td className="p-4 text-center">
                   <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-bold">
                     {p.ProductVariant?.length || 0} items
