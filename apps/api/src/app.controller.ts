@@ -44,6 +44,11 @@ export class AppController {
     return this.productService.products({});
   }
 
+  @Post('products')
+  async createProduct(@Body() data: any): Promise<ProductModel> {
+    return this.productService.create(data);
+  }
+
   @Get('filtered-products/:searchString')
   async getFilteredProducts(
     @Param('searchString') searchString: string,
